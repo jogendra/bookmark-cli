@@ -12,7 +12,7 @@ var addCmd = &cobra.Command{
 	Short: "Add a link/text to bookmarks list",
 	Long: `When you run this command with a link or text, it add that link/text to your bookmarks list`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("add called with argument" + args[0])
+		fmt.Println("add called with argument (by user): " + args[0])
 	},
 }
 

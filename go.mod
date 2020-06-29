@@ -1,4 +1,4 @@
-module bmark-cli
+module bookmark
 
 go 1.14
 

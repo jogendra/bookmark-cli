@@ -1,6 +1,6 @@
 package main
 
-import "bmark-cli/cmd"
+import "bookmark/cmd"
 
 func main() {
 	cmd.Execute()

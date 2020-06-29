@@ -1,1 +1,6 @@
 main
+/bin
+/bookmark
+
+# macOS
+.DS_Store
