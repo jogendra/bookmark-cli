@@ -1,6 +1,6 @@
 package main
 
-import "$GOPATH/bmark/cmd"
+import "github.com/jogendra/bmark-cli/cmd"
 
 func main() {
 	cmd.Execute()
