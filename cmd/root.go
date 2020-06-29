@@ -54,9 +54,9 @@ func initConfig() {
 			os.Exit(1)
 		}
 
-		// Search config in home directory with name ".bmark" (without extension).
+		// Search config in home directory with name ".bookmark" (without extension).
 		viper.AddConfigPath(home)
-		viper.SetConfigName(".bmark")
+		viper.SetConfigName(".bookmark")
 	}
 
 	viper.AutomaticEnv() // read in environment variables that match
