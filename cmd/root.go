@@ -14,8 +14,8 @@ var cfgFile string
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "bookmark",
-	Short: "A tool to manage all of your bookmarks at one place",
-	Long: `A tool to manage all of your bookmarks at one place.`,
+	Short: "A Command Line tool to manage all of your bookmarks at one place",
+	Long: `A Command Line tool to manage all of your bookmarks at one place.`,
 }
 
 // Execute adds all child commands to the root command and sets flags appropriately.
