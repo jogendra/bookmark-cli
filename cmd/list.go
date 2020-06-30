@@ -1,7 +1,8 @@
 package cmd
 
 import (
-	"fmt"
+	"os"
+	"os/exec"
 
 	"github.com/spf13/cobra"
 )
@@ -12,7 +13,10 @@ var listCmd = &cobra.Command{
 	Short: "Display the list of all of your bookmarks",
 	Long: `Display the list of all of your bookmarks`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Here is the list of all of your bookmarks:\n")
+		inputCmd := exec.Command("/bin/sh", "-c", "cat ~/.bookmarks/bookmarks.txt")
+		inputCmd.Stdout = os.Stdout
+		inputCmd.Stderr = os.Stderr
+    	inputCmd.Run()
 	},
 }
 
