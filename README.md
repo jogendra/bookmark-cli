@@ -30,3 +30,6 @@ Help about any command
 ```bash
 bookmark help
 ```
+
+## License
+This project is under **Apache License 2.0**. Please check [LICENSE](LICENSE) for more info.
