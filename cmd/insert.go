@@ -3,11 +3,10 @@ package cmd
 import (
 	"os"
 	"os/exec"
-
 	"github.com/spf13/cobra"
 )
 
-// insertCmd represents the add command
+// insertCmd represents the insert command
 var insertCmd = &cobra.Command{
 	Use:   "insert",
 	Short: "Add a new bookmark to bookmarks list",

@@ -1,17 +1,17 @@
 package cmd
 
 import (
-	"os"
 	"fmt"
+	"os"
 	"bufio"
 	"github.com/spf13/cobra"
 )
 
-// listCmd represents the list command
-var listCmd = &cobra.Command{
-	Use:   "list",
-	Short: "Display the list of all of your bookmarks",
-	Long: `Display the list of all of your bookmarks`,
+// lastCmd represents the last command
+var lastCmd = &cobra.Command{
+	Use:   "last",
+	Short: "Show the last most bookmark added",
+	Long: `Show the last most bookmark added from the bookmarks list`,
 	Run: func(cmd *cobra.Command, args []string) {
 		homeDir, _ := os.UserHomeDir()
 		if _, err := os.Stat(homeDir + "/.bookmarks/bookmarks.txt"); os.IsNotExist(err) {
@@ -21,12 +21,14 @@ var listCmd = &cobra.Command{
 		f, _ := os.Open(homeDir + "/.bookmarks/bookmarks.txt")
 		defer f.Close()
 		scanner := bufio.NewScanner(f)
+		var lastLine string
 		for scanner.Scan() {
-			fmt.Println(">", scanner.Text())
+			lastLine = scanner.Text()
 		}
+		fmt.Println(">", lastLine)
 	},
 }
 
 func init() {
-	rootCmd.AddCommand(listCmd)
+	listCmd.AddCommand(lastCmd)
 }
