@@ -14,7 +14,8 @@ var lastCmd = &cobra.Command{
 	Long: `Show the last most bookmark added from the bookmarks list`,
 	Run: func(cmd *cobra.Command, args []string) {
 		homeDir, _ := os.UserHomeDir()
-		if _, err := os.Stat(homeDir + "/.bookmarks/bookmarks.txt"); os.IsNotExist(err) {
+		if _, err := os.Stat(homeDir + "/.bookmarks/bookmarks.txt");
+		os.IsNotExist(err) {
 			fmt.Println("Your bookmarks list is empty")
 			return
 		}

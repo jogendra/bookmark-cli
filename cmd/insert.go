@@ -2,7 +2,6 @@ package cmd
 
 import (
 	"os"
-	"os/exec"
 	"github.com/spf13/cobra"
 )
 
@@ -13,12 +12,17 @@ var insertCmd = &cobra.Command{
 	Long: `When you run this command with a link or text, it add that link/text to your bookmarks list`,
 	Run: func(cmd *cobra.Command, args []string) {
 		homeDir, _ := os.UserHomeDir()
-		if _, err := os.Stat(homeDir + "/.bookmarks/bookmarks.txt"); os.IsNotExist(err) {
+		bookmarkFile := homeDir + "/.bookmarks/bookmarks.txt"
+		if _, err := os.Stat(bookmarkFile);
+		os.IsNotExist(err) {
 			os.Mkdir(homeDir + "/.bookmarks", 0700)
 			os.Create(homeDir + "/.bookmarks/bookmarks.txt")
 		}
-		commandString := "echo " + "\"" + args[0] + "\"" + " >> ~/.bookmarks/bookmarks.txt"
-		exec.Command("/bin/sh", "-c", commandString).Output()
+		f, _ := os.OpenFile(bookmarkFile,
+							os.O_APPEND|os.O_WRONLY,
+							os.ModeAppend) 
+		f.WriteString(args[0] + "\n") 
+		f.Close()
 	},
 }
 
