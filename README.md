@@ -1,4 +1,5 @@
 # bookmark-cli
+
 Command Line tool to manage all of your bookmarks at one place.
 
 Also, source code for [https://jogendra.github.io/building-command-line-tools-in-go](https://jogendra.github.io/building-command-line-tools-in-go)
@@ -9,29 +10,44 @@ Also, source code for [https://jogendra.github.io/building-command-line-tools-in
 
 Available Commands:
 
-### add
+### insert
+
 Add a new bookmark to bookmarks list
+
 ```bash
-bookmark add "<boomkmark>"
+bookmark insert "<boomkmark>"
 ```
 
 ### list
+
 Display the list of all of your bookmarks
+
 ```bash
 bookmark list
 ```
 
+You can use `last` subcommand to display last most added bookmark
+
+```bash
+bookmark list last
+```
+
 ### clearall
+
 Clear all the bookmarks
+
 ```bash
 bookmark clearall
 ```
   
 ### help
+
 Help about any command
+
 ```bash
 bookmark help
 ```
 
 ## License
+
 This project is under **Apache License 2.0**. Please check [LICENSE](LICENSE) for more info.
