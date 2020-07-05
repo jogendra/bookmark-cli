@@ -1,7 +1,9 @@
 # bookmark-cli
 Command Line tool to manage all of your bookmarks at one place.
 
-![bookmark-cli-screenshot](https://user-images.githubusercontent.com/20956124/86082525-9f23ec80-bab5-11ea-8104-16dda34ac343.png)
+Also, source code for [https://jogendra.github.io/building-command-line-tools-in-go](https://jogendra.github.io/building-command-line-tools-in-go)
+
+![bookmark-cli screenshot](https://user-images.githubusercontent.com/20956124/86528214-7e97d000-bec3-11ea-8d21-a2d3f7eff485.png)
 
 ## Usage
 
